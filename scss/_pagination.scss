@@ -1,0 +1,31 @@
+.pagination {
+    display: flex;
+    grid-gap: 5px;
+    margin-top: 100px;
+
+    @media (max-width: 580px) {
+        margin-top: 50px;           
+    }
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 53px;
+        height: 53px;
+        transition: .2s;
+        border-radius: 10px;
+        padding: 5px 0 0;
+        border: 1px solid #CFDBD5;
+        font-size: 16px;
+        line-height: 21px;
+        font-weight: 700;
+        color: #000;
+
+        &:hover,
+        &.active {
+            border: 1px solid #BBFF34;
+            transition: .2s;
+            background: #BBFF34;
+        }
+    }
+}

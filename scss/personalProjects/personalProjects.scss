@@ -1,0 +1,135 @@
+@import '../main';
+@import '../personal';
+@import '../pagination';
+@import '../project';
+@import '../personalHeader';
+@import '../../adaptiveMode/adaptive';
+@import '../personalModals';
+
+.main {
+    padding: 26px 93px;
+    position: relative;
+
+    @media (max-width: 980px) {
+        padding: 25px;
+    }
+    &__wrapper {
+        display: none;
+        padding-bottom: 120px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 26px;
+
+        @media (max-width: 980px) {
+            grid-template-columns: repeat(2, 1fr);
+            padding-bottom: 160px;
+        }
+
+        @media (max-width: 580px) {
+            grid-template-columns: 1fr;   
+        }
+        &.active {
+            display: grid;
+        }
+    }
+
+    &__container {
+        @media (max-width: 580px) {
+            position: relative;   
+        }
+    }
+}
+
+.pagination {
+    max-width: fit-content;
+    margin: 0;
+    position: absolute;
+    right: 93px;
+    bottom: 50px;
+
+    @media (max-width: 980px) {
+        right: 25px;
+    }
+    @media (max-width: 580px) {
+        bottom: 10px;       
+    }
+}
+
+.activeProject {
+
+    &__wrapper {
+        background: #fff;
+        border-radius: 15px;
+        margin-top: 48px;
+        display: flex;
+    }
+
+    &__tables {
+        width: 100%;
+        max-width: 906px;
+        padding: 26px;
+
+        &_el {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+
+
+        }
+    }
+
+    &__aside {
+        border-right: 1px solid #CFDBD5;
+        padding: 47px 27px;
+        width: 100%;
+        max-width: 428px;
+
+        &_pic {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto;
+
+            &_img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        &_title {
+            text-align: center;
+            color: #000;
+            font-size: 24px;
+            line-height: 32px;
+            font-weight: 800;
+            margin: 28px 0 60px;
+        }
+
+        &_btns {
+
+            &_btn {
+                width: 100%;
+                transition: .2s;
+                border-radius: 5px;
+                padding: 34px;
+                display: flex;
+                align-items: center;
+                grid-gap: 34px;
+
+                &_txt {
+                    font-size: 19px;
+                    line-height: 28px;
+                    font-weight: 700;
+                    color: #000;
+                }
+
+                &:hover,
+                &.active {
+                    transition: .2s;
+                    background: #F5F5FA;
+                }
+            }
+        }
+    }
+}

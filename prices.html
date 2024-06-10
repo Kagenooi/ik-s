@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivan Korn Systems</title>
+    <link type="image/x-icon" href="./favicon.svg" rel="shortcut icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="scss/documents/documents.css">
+</head>
+<body>
+    <div id="adaptive">
+        
+        <form action="">
+            <div class="modal" id="signin">
+                <button class="modal__closeBtn" type="button" onclick="modalToggle()">&#10006;</button>
+                <div class="modal__wrapper">
+                    <img src="images/modalLogo.svg" alt="" class="modal__icon">
+                    <div class="modal__container">
+                        <h2 class="modal__title">Авторизация</h2>
+                        <p class="modal__pr">Войдите в аккаунт используя электронную почту</p>
+                        <div class="modal__form">
+                            <label for="" class="modal__form_lab">
+                                <h3 class="modal__form_lab_title">Электронная почта</h3>
+                                <input type="text" name="" id="" class="modal__form_lab_inp" placeholder="avitologbkk@gmail.ru">
+                                <img src="" alt="" class="modal__form_lab_icon">
+                            </label>
+                            <label for="" class="modal__form_lab">
+                                <h3 class="modal__form_lab_title">Пароль</h3>
+                                <input type="password" name="" id="" class="modal__form_lab_inp" placeholder="Введите пароль">
+                                <button type="button" class="modal__form_lab_btn showPassword">
+                                    <img src="images/show.svg" alt="" class="modal__form_lab_btn_icon">
+                                </button>
+                            </label>
+                            <div class="modal__form_btns">
+                                <label for="remember" class="modal__form_btns_lab">
+                                    <input type="checkbox" name="" id="remember" class="modal__form_btns_lab_inp">
+                                    <span class="modal__form_btns_lab_txt">Запомнить меня</span>
+                                </label>
+                                <button type="button" class="modal__form_btns_btn" data-modal="recovery" onclick="modalToggle(this)">Забыли пароль?</button>
+                            </div>
+                            <!-- <button type="submit" class="modal__form_submit">Войти</button> -->
+                            <a href="personalHome.html" class="modal__form_submit">Войти</a>
+                        </div>
+                    </div>
+                    <p class="modal__footer">
+                        Еще нет аккаунта? 
+                        <button type="button" class="modal__footer_btn" data-modal="signup" onclick="modalToggle(this)">Регистрация</button>
+                    </p>
+                </div>
+            </div>
+
+            <div class="modal" id="signup">
+                <button class="modal__closeBtn" type="button" onclick="modalToggle()">&#10006;</button>
+                <div class="modal__wrapper">
+                    <img src="images/modalLogo.svg" alt="" class="modal__icon">
+                    <div class="modal__container">
+                        <h2 class="modal__title">Регистрация</h2>
+                        <p class="modal__pr">Пройдите регистрацию используя электронную почту</p>
+                        <div class="modal__form">
+                            <label for="" class="modal__form_lab">
+                                <h3 class="modal__form_lab_title">Электронная почта</h3>
+                                <input type="text" name="" id="" class="modal__form_lab_inp" placeholder="avitolog@gmail.ru">
+                                <img src="" alt="" class="modal__form_lab_icon">
+                            </label>
+                            <label for="" class="modal__form_lab">
+                                <h3 class="modal__form_lab_title">Пароль</h3>
+                                <input type="password" name="" id="" class="modal__form_lab_inp" placeholder="Введите пароль">
+                                <button type="button" class="modal__form_lab_btn showPassword">
+                                    <img src="images/show.svg" alt="" class="modal__form_lab_btn_icon">
+                                </button>
+                            </label>
+                            <label for="" class="modal__form_lab">
+                                <h3 class="modal__form_lab_title">Повторите пароль</h3>
+                                <input type="password" name="" id="" class="modal__form_lab_inp" placeholder="Введите пароль">
+                                <button type="button" class="modal__form_lab_btn showPassword">
+                                    <img src="images/show.svg" alt="" class="modal__form_lab_btn_icon">
+                                </button>
+                            </label>
+                            <label for="policy" class="modal__form_policy">
+                                <input type="checkbox" name="" id="policy" class="modal__form_policy_inp">
+                                <span class="modal__form_policy_txt">
+                                    <a href="" class="modal__form_policy_txt_link">Я прочитал и согласен с политикой обработки персональных данных</a>
+                                </span>
+                            </label>
+                            <!-- <button type="submit" class="modal__form_submit">Регистрация</button> -->
+                            <a href="personalHome.html" class="modal__form_submit">Регистрация</a>
+                        </div>
+                    </div>
+                    <p class="modal__footer">
+                        Уже есть аккаунт? 
+                        <button type="button" class="modal__footer_btn" data-modal="signin" onclick="modalToggle(this)">Войти</button>
+                    </p>
+                </div>
+            </div>
+
+            <div class="modal" id="recovery">
+                <button class="modal__closeBtn" type="button" onclick="modalToggle()">&#10006;</button>
+                <div class="modal__wrapper">
+                    <div class="modal__container">
+                        <img src="images/modalLogo.svg" alt="" class="modal__icon">
+                        <h2 class="modal__title">Забыли пароль?</h2>
+                        <p class="modal__pr">Введите свой e-mail ниже, и вы получите письмо с инструкцией как сбросить пароль.</p>
+                        <div class="modal__form">
+                            <label for="" class="modal__form_lab">
+                                <h3 class="modal__form_lab_title">Электронная почта</h3>
+                                <input type="text" name="" id="" class="modal__form_lab_inp" placeholder="avitologbkk@gmail.ru">
+                                <img src="" alt="" class="modal__form_lab_icon">
+                            </label>
+                            <button type="submit" class="modal__form_submit">Отправить письмо</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <nav class="navbar">
+            <div class="navbar__wrapper">
+                <a href="#header" class="navbar__logo">
+                    <img src="images/footerLogo.svg" alt="logo" class="navbar__logo_icon">
+                </a>
+                <div class="navbar__central">
+                    <ul class="navbar__menu">
+                        <li>
+                            <a href="" class="navbar__menu_link">
+                                <img src="images/tarif.svg" alt="" class="navbar__menu_link_icon">
+                                Тарифы
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="navbar__menu_link">
+                                <img src="images/contacts.svg" alt="" class="navbar__menu_link_icon">
+                                Контакты
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="navbar__menu_link">
+                                <img src="images/about.svg" alt="" class="navbar__menu_link_icon">
+                                О продукте
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="" class="navbar__phone">+7 (930) 755-75-75</a>
+                </div>
+                <button type="button" class="navbar__personalArea" data-modal="signin" onclick="modalToggle(this)">
+                    <span class="navbar__personalArea_txt">
+                        <span class="desktop">Личный кабинет</span>
+                        <span class="mobile">Вход</span>
+                    </span>
+                    <img src="images/arrowGreen.svg" alt="personal area" class="navbar__personalArea_pic desktop">
+                    <img src="images/arrow.svg" alt="personal area" class="navbar__personalArea_pic mobile">
+                </button>
+            </div>
+        </nav>
+
+        <main class="main">
+            <a href="index.html" class="link">
+                <img src="images/link.svg" alt="" class="link__icon">
+                <span class="link__txt">Назад</span>
+            </a>
+            <h1 class="title">Тарифы Автозагрузки</h1>
+            <div class="prices">
+                <h3 class="prices__price">Основной - 1000 руб.</h3>
+                <div class="prices__requisites">
+                    <h4 class="prices__requisites_title">Реквизиты</h3>
+                    <p class="prices__requisites_pr">ИП Симагина Мадина Джамильевна</p>
+                    <p class="prices__requisites_pr">Инн 890104428093</p>
+                    <p class="prices__requisites_pr">ОГРНИП 323784700157307</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__wrapper">
+                <div class="footer__header">
+                    <a href="" class="footer__logo">
+                        <img src="images/footerLogo.svg" alt="" class="footer__logo_pic">
+                    </a>
+                    <div class="footer__item green">
+                        <h3 class="footer__item_title">Тех. поддержка:</h3>
+                        <ul class="footer__item_list">
+                            <li>
+                                <a href="t.me/KaminskiyVl" class="footer__item_list_link">
+                                    <img src="images/telegramGreen.svg" alt="" class="footer__item_list_link_icon">
+                                    @KaminskiyVl
+                                </a>
+                            </li>                        
+                        </ul>
+                    </div>
+                    <div class="footer__item">
+                        <ul class="footer__item_list">
+                            <li>
+                                <a href="tel::+79307557575" class="footer__item_list_link">
+                                    <img src="images/phone.svg" alt="" class="footer__item_list_link_icon">
+                                    +7 (930) 755-75-75
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto::Ivankornwork@gmail.com" class="footer__item_list_link">
+                                    <img src="images/envelope.svg" alt="" class="footer__item_list_link_icon">
+                                    Ivankornwork@gmail.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__item">
+                        <ul class="footer__item_list">
+                            <li>
+                                <a href="t.me/ik_systems" class="footer__item_list_link">
+                                    <img src="images/telegramWhite.svg" alt="" class="footer__item_list_link_icon">
+                                    @ik_systems
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="footer__item_list_link">
+                                    <img src="images/youtube.svg" alt="" class="footer__item_list_link_icon">
+                                    @avitolog_ivankorn
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <p class="footer__bottom_cpw">© 2024 Ivan Korn Marketing Agency</p>
+                    <ul class="footer__bottom_list">
+                        <li><a href="policy.html" class="footer__bottom_list_link">Политика конфиденциальности</a></li>
+                        <li><a href="agreement.html" class="footer__bottom_list_link">Договор оферта</a></li>
+                        <li><a href="prices.html" class="footer__bottom_list_link">Цены</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="js/homepage.js"></script>
+</body>
+</html>

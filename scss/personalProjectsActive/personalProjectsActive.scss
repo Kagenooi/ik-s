@@ -1,0 +1,201 @@
+@import '../main';
+@import '../personal';
+@import '../../adaptiveMode/adaptive';
+@import '../personalHeader';
+@import '../personalTables';
+@import '../personalModals';
+
+
+.main {
+    &__header {
+        @media (max-width: 580px) {
+            display: none;
+        }
+    }
+}
+
+.el {
+
+    &__autopay {
+        position: relative;
+        border: 1px solid #CFDBD5;
+        border-radius: 10px;
+        padding: 7px 7px 7px 17px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        grid-gap: 43px;
+        max-width: fit-content;
+        transition: .2s;
+
+        @media (max-width: 580px) {
+            background: #fff;
+            padding: 7px 12px;
+            grid-gap: 30px;
+        }
+
+        &:hover {
+            border-color: #BBFF34;
+            transition: .2s;
+        }
+
+        &_inp {
+            display: none;
+        }
+
+        &_txt {
+            font-size: 16px;
+            line-height: 21px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        &_eff {
+
+            &::after {
+                content: '';
+                display: block;
+                width: 67px;
+                height: 34px;
+                border-radius: 40px;
+                background: #F8F8FC;
+                transition: .2s;
+            }
+
+            &::before {
+                content: '';
+                display: block;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background: #fff;
+                position: absolute;
+                top: 9px;
+                right: 43px;
+                box-shadow: 3px 0px 5px 1px rgba(0, 0, 0, 0.15);
+                transition: .2s;
+
+                @media (max-width: 580px) {
+                    right: 46px;
+                }
+            }
+        }
+
+        &_inp:checked+&_eff {
+            &::after {
+                background: #BBFF34;
+                transition: .2s;
+            }
+
+            &::before {
+                right: 9px;
+                transition: .2s;
+                box-shadow: -3px 0px 5px 1px rgba(0, 0, 0, 0.15);
+
+                @media (max-width: 580px) {
+                    right: 14px;
+                }
+            }
+        }
+    }
+
+    .br {
+        display: block;
+        padding: 5px 0;
+        width: 100%;
+    }
+
+    &__wrapper {
+        margin-bottom: 0 !important;
+
+        &_item {
+
+            @media (max-width: 580px) {
+                border-radius: 15px;
+
+                &::before {
+                    display: none !important;
+                }
+            }
+            &_addBaket {
+                width: 100%;
+
+                &_title {
+                    font-size: 16px;
+                    line-height: 21px;
+                    font-weight: 500;
+                    color: #5F646D;
+                    margin-bottom: 7px;
+                }
+
+                &_form {
+                    display: flex;
+                    align-items: center;
+                    grid-gap: 12px;
+
+                    @media (max-width: 580px) {
+                        grid-gap: 5px;
+                    }
+
+                    &_inp {
+                        display: block;
+                        width: 100%;
+                        max-width: 340px;
+                        padding: 7px 11px;
+                        border-radius: 10px;
+                        background: #FFFFFF;
+                        font-weight: 300;
+                        font-size: 11px;
+                        line-height: 21px;
+                        color: #5F646D;
+                        font-style: italic;
+
+                        &::placeholder {
+                            font-weight: 300;
+                            font-size: 11px;
+                            line-height: 21px;
+                            color: #5F646D;
+                            font-style: italic;
+                        }
+
+                        @media (max-width: 580px) {
+                            background: #F5F5FA;
+                        }
+                    }
+
+                    &_btn {
+                        padding: 7px 52px;
+                        border-radius: 10px;
+                        text-align: center;
+                        background: #BBFF34;
+                        color: #000;
+                        font-size: 16px;
+                        line-height: 21px;
+                        font-weight: 700;
+
+                        @media (max-width: 580px) {
+                            font-size: 14px;
+                            line-height: 1.5;
+                            padding: 6px 28px;
+                        }
+
+                        &.noactive {
+                            background: #F5F5FA;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__btn {
+
+        @media (max-width: 580px) {
+            margin: 0 auto !important;
+            display: block;
+        }
+        &.noactive {
+            background: #F5F5FA;
+        }
+    }
+}
